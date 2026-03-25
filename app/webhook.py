@@ -10,6 +10,11 @@ from app.cliente_openai import OpenAIClient
 
 from fastapi.middleware.cors import CORSMiddleware
 
+
+
+load_dotenv()
+
+app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Sesuaikan untuk production
@@ -17,10 +22,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-load_dotenv()
-
-app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
