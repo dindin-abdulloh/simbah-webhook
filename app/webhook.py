@@ -37,6 +37,10 @@ WHATSAPP_TOKEN = os.environ.get("WHATSAPP_API_TOKEN")
 PHONE_NUMBER_ID = os.environ.get("WHATSAPP_CLOUD_NUMBER_ID")
 VERIFY_TOKEN = os.environ.get("WHATSAPP_HOOK_TOKEN")
 
+print(f"The value is: {WHATSAPP_TOKEN}")
+print(f"The value is: {PHONE_NUMBER_ID}")
+print(f"The value is: {VERIFY_TOKEN}")
+
 # Inisialisasi OpenAI Client
 openai_client = OpenAIClient()
 
