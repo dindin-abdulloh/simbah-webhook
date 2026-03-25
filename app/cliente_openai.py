@@ -12,12 +12,7 @@ from io import StringIO
 # KONFIGURASI
 # =====================================
 
-print("=== DEBUG ENV ===")
-print(f"OPENAI_API_KEY exists: {'OPENAI_API_KEY' in os.environ}")
-print(f"OPENAI_API_KEY value: {os.environ.get('OPENAI_API_KEY', 'NOT SET')[:20] if os.environ.get('OPENAI_API_KEY') else 'NOT SET'}...")
-print(f"WHATSAPP_API_TOKEN exists: {'WHATSAPP_API_TOKEN' in os.environ}")
-print(f"WHATSAPP_CLOUD_NUMBER_ID exists: {'WHATSAPP_CLOUD_NUMBER_ID' in os.environ}")
-print("=== END DEBUG ===")
+
 
 # Sheet Jadwal Dokter
 SHEET_ID = "1dTcB7jVhbSkKV7s-uDgAHv9OvvVOpM5rVTOQPK2p8fE"

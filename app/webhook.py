@@ -33,9 +33,33 @@ logger = logging.getLogger(__name__)
 # # VERIFY_TOKEN = os.getenv("WHATSAPP_HOOK_TOKEN")
 # VERIFY_TOKEN = os.getenv("WHATSAPP_HOOK_TOKEN")
 
-WHATSAPP_TOKEN = os.environ.get("WHATSAPP_API_TOKEN")
-PHONE_NUMBER_ID = os.environ.get("WHATSAPP_CLOUD_NUMBER_ID")
-VERIFY_TOKEN = os.environ.get("WHATSAPP_HOOK_TOKEN")
+# WHATSAPP_TOKEN = os.environ.get("WHATSAPP_API_TOKEN")
+# PHONE_NUMBER_ID = os.environ.get("WHATSAPP_CLOUD_NUMBER_ID")
+# VERIFY_TOKEN = os.environ.get("WHATSAPP_HOOK_TOKEN")
+
+# ===========================================
+# DEBUG: CEK ENVIRONMENT VARIABLES
+# ===========================================
+print("=" * 50)
+print("🔍 DEBUG: CHECKING ENVIRONMENT VARIABLES")
+print(f"WHATSAPP_API_TOKEN: {os.environ.get('WHATSAPP_API_TOKEN', 'NOT SET')[:20] if os.environ.get('WHATSAPP_API_TOKEN') else 'NOT SET'}...")
+print(f"WHATSAPP_CLOUD_NUMBER_ID: {os.environ.get('WHATSAPP_CLOUD_NUMBER_ID', 'NOT SET')}")
+print(f"WHATSAPP_HOOK_TOKEN: {os.environ.get('WHATSAPP_HOOK_TOKEN', 'NOT SET')}")
+print(f"OPENAI_API_KEY: {os.environ.get('OPENAI_API_KEY', 'NOT SET')[:20] if os.environ.get('OPENAI_API_KEY') else 'NOT SET'}...")
+print("=" * 50)
+
+# ===========================================
+# KONFIGURASI
+# ===========================================
+
+# Gunakan environment variables jika ada, fallback ke hardcode
+WHATSAPP_TOKEN = os.environ.get("WHATSAPP_API_TOKEN") or "EAA...fallback_token"
+PHONE_NUMBER_ID = os.environ.get("WHATSAPP_CLOUD_NUMBER_ID") or "1075790325613918"
+VERIFY_TOKEN = os.environ.get("WHATSAPP_HOOK_TOKEN") or "mywhatsappbot12345"
+
+print(f"✅ FINAL WHATSAPP_TOKEN: {'SET' if WHATSAPP_TOKEN else 'EMPTY'}")
+print(f"✅ FINAL PHONE_NUMBER_ID: {PHONE_NUMBER_ID}")
+print(f"✅ FINAL VERIFY_TOKEN: {VERIFY_TOKEN}")
 
 
 # Inisialisasi OpenAI Client
