@@ -7,10 +7,14 @@ from openai import OpenAI
 from datetime import datetime
 import requests
 from io import StringIO
+from dotenv import load_dotenv
 
 # =====================================
 # KONFIGURASI
 # =====================================
+
+# Load environment variables
+load_dotenv()
 
 # Sheet Jadwal Dokter
 SHEET_ID = "1dTcB7jVhbSkKV7s-uDgAHv9OvvVOpM5rVTOQPK2p8fE"
