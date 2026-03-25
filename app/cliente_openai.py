@@ -43,6 +43,7 @@ class OpenAIClient:
         # =====================================
         # INISIALISASI OPENAI (PAID, CLOUD)
         # =====================================
+        # self.openai_api_key = os.environ.get("OPENAI_API_KEY")
         self.openai_api_key = os.environ.get("OPENAI_API_KEY")
         if self.openai_api_key:
             self.openai_client = OpenAI(api_key=self.openai_api_key)

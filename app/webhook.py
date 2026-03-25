@@ -28,10 +28,14 @@ logger = logging.getLogger(__name__)
 # =====================================
 # KONFIGURASI
 # =====================================
-WHATSAPP_TOKEN = os.getenv("EAA8Yby7xnDoBRPZBq50hUaO6UJfYDxy0TAjs2h4K1hoJBmxME7P1ndTYYs7dxb6nrvrnfPbP6oOQvZAv8rum6Kder5QycmRZBjPlZA92ZCsBQTQ7QPZAIBAcZCyfAUlPFg8TQPmeLfzRIukbJQwWq0QeBZCMh99idCi8y2qOkSZCetaPPCqM4hKfraIpUUwkedVcmTJBFv3X57EnrRxino5XsHfBzxPVbFMSovKgny9cGxia7s0Pg0xw3Vx7qA2xIFx3BEQiAZAcf5ZBZC5ZAqOD6ECpp")
-PHONE_NUMBER_ID = os.getenv("1075790325613918")
+# WHATSAPP_TOKEN = os.getenv("WHATSAPP_API_TOKEN")
+# PHONE_NUMBER_ID = os.getenv("WHATSAPP_CLOUD_NUMBER_ID")
+# # VERIFY_TOKEN = os.getenv("WHATSAPP_HOOK_TOKEN")
 # VERIFY_TOKEN = os.getenv("WHATSAPP_HOOK_TOKEN")
-VERIFY_TOKEN = os.getenv("WHATSAPP_HOOK_TOKEN")
+
+WHATSAPP_TOKEN = os.environ.get("WHATSAPP_API_TOKEN")
+PHONE_NUMBER_ID = os.environ.get("WHATSAPP_CLOUD_NUMBER_ID")
+VERIFY_TOKEN = os.environ.get("WHATSAPP_HOOK_TOKEN")
 
 # Inisialisasi OpenAI Client
 openai_client = OpenAIClient()
