@@ -288,7 +288,13 @@ Gunakan bahasa sopan, islami, dan profesional.
     # =====================================
     
     def _is_greeting(self, message: str, history: list = None) -> bool:
-        """Deteksi apakah pesan adalah sapaan (termasuk di tengah percakapan)"""
+        """Deteksi apakah pesan adalah sapaan (hanya jika belum ada percakapan)"""
+        
+        # JIKA SUDAH ADA HISTORY, BUKAN SAPAAN AWAL
+        if history and len(history) > 0:
+            print(f"   History exists, not treating as greeting")
+            return False
+        
         greetings = [
             "halo", "hai", "hello", "hi", "hey",
             "pagi", "siang", "malam", "selamat",
@@ -298,7 +304,7 @@ Gunakan bahasa sopan, islami, dan profesional.
         ]
         msg_lower = message.lower().strip()
         is_greeting = any(greet in msg_lower for greet in greetings)
-        print(f"   Greeting detection: {is_greeting} for '{msg_lower}'")
+        print(f"   Greeting detection: {is_greeting} for '{msg_lower}' (history exists: {bool(history)})")
         return is_greeting
     
     def _is_thank_you(self, message: str) -> bool:
