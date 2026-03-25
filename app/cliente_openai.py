@@ -12,8 +12,6 @@ from io import StringIO
 # KONFIGURASI
 # =====================================
 
-
-
 # Sheet Jadwal Dokter
 SHEET_ID = "1dTcB7jVhbSkKV7s-uDgAHv9OvvVOpM5rVTOQPK2p8fE"
 SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
@@ -45,8 +43,7 @@ class OpenAIClient:
         # =====================================
         # INISIALISASI OPENAI (PAID, CLOUD)
         # =====================================
-        # self.openai_api_key = os.environ.get("OPENAI_API_KEY")
-        self.openai_api_key = os.environ.get("OPENAI_API_KEY")
+        self.openai_api_key = os.getenv("OPENAI_API_KEY")
         if self.openai_api_key:
             self.openai_client = OpenAI(api_key=self.openai_api_key)
             self.openai_model = "gpt-4o-mini"
